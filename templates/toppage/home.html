@@ -2,9 +2,23 @@
 
 {% block content %}
   <div class="container">
+
+
+    <!-- ヘッダー -->
+    <div class="card " style="margin-top: 2em">
+      <div class="card-body">
+        <h5 class="card-title">メモとかニュース</h5>
+        <p class="card-text">
+          つくったものとか適当に置いてく予定。あまり目的がきまってないので適当にやってきます。
+        </p>
+      </div>
+    </div>
+
+
+    <!-- つくったものリスト -->
     <div class="card-deck">
       {% for item in items %}
-        <div class="card border-primary mb-3" style="margin-top: 2rem; max-width: 18rem">
+        <div class="card mb-3" style="margin-top: 2em; max-width: 18rem">
           <div class="card-header">
             {{ item.title }}
           </div>

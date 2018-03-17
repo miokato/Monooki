@@ -4,7 +4,7 @@ from item.models import Item
 
 
 class ItemListView(ListView):
-    template_name = 'toppage/item-list.html'
+    template_name = 'toppage/home.html'
     model = Item
     context_object_name = 'items'
 
