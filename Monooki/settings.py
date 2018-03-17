@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import custom_settings
+
+custom = custom_settings.load('settings_custom')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p1_c_*8#x65g619p15c2xgh=kfzb#k95oeuu8avs$4agxj+g#t'
+SECRET_KEY = custom.get('SECRET_KEY', use_environ=True)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,11 +81,11 @@ WSGI_APPLICATION = 'Monooki.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'monooki',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': 5432
+        'NAME': custom.get('POSTGRES_NAME', use_environ=True),
+        'USER': custom.get('POSTGRES_USER', use_environ=True),
+        'PASSWORD': custom.get('POSTGRES_PASSWORD', use_environ=True),
+        'HOST': custom.get('POSTGRES_HOST', use_environ=True),
+        'PORT': custom.get('POSTGRES_PORT', use_environ=True),
     }
 }
 
