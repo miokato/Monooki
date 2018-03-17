@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'bootstrap-4.0.0-dist/css/bootstrap.min.css' %}"/>
+  {% block custom-css %}{% endblock custom-css %}
+</head>
+<body>
+
+
+{% block nav %}{% include 'navbar.html' %}{% endblock nav %}
+{% block content %}{% endblock content %}
+
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap-4.0.0-dist/js/bootstrap.min.js' %}"></script>
+{% block custom-js %}{% endblock custom-js %}
+</body>
+</html>

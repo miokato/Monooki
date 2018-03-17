@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-<h1>Hello</h1>
+{% extends 'toppage/base.html' %}
 
-</body>
-</html>
+{% block content %}
+  <div class="container">
+    <div class="card-deck">
+      {% for item in items %}
+        <div class="card border-primary mb-3" style="margin-top: 2rem; max-width: 18rem">
+          <div class="card-header">
+            {{ item.title }}
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{ item.description }}</p>
+            <p class="card-text"><a href="#">{{ item.url }}</a></p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
+
