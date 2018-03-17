@@ -2,8 +2,8 @@ from .base import *
 import os
 
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['monooki.herokuapp.com']
 
 
 MIDDLEWARE += [
