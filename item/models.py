@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Item(models.Model):
@@ -6,7 +7,7 @@ class Item(models.Model):
     url = models.URLField(max_length=255)
     description = models.TextField()
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=datetime.now)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
