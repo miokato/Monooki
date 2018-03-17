@@ -1,0 +1,1 @@
+web: gunicorn Monooki.wsgi --log-file -

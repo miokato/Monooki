@@ -23,12 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = custom.get('SECRET_KEY', use_environ=True)
+SECRET_KEY = custom.get('SECRET_KEY', use_environ=True, default='fieawjfia')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'Monooki.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': custom.get('POSTGRES_NAME', use_environ=True),
-        'USER': custom.get('POSTGRES_USER', use_environ=True),
+        'NAME': custom.get('POSTGRES_NAME', use_environ=True, default='postgres'),
+        'USER': custom.get('POSTGRES_USER', use_environ=True, default='postgres'),
         'PASSWORD': custom.get('POSTGRES_PASSWORD', use_environ=True),
         'HOST': custom.get('POSTGRES_HOST', use_environ=True),
-        'PORT': custom.get('POSTGRES_PORT', use_environ=True),
+        'PORT': 5432
     }
 }
 
@@ -127,4 +127,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
