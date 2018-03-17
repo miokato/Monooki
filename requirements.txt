@@ -8,3 +8,4 @@ django==2.0.3
 gunicorn==19.7.1
 psycopg2==2.7.4
 pytz==2018.3              # via django
+whitenoise==3.3.1
