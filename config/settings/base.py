@@ -11,24 +11,15 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import custom_settings
 
-custom = custom_settings.load('settings_custom')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PRODUCT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = custom.get('SECRET_KEY', use_environ=True, default='fieawjfia')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -53,12 +44,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Monooki.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(PRODUCT_ROOT, 'templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -72,22 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Monooki.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': custom.get('POSTGRES_NAME', use_environ=True, default='postgres'),
-        'USER': custom.get('POSTGRES_USER', use_environ=True, default='postgres'),
-        'PASSWORD': custom.get('POSTGRES_PASSWORD', use_environ=True),
-        'HOST': custom.get('POSTGRES_HOST', use_environ=True),
-        'PORT': 5432
-    }
-}
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Password validation
@@ -128,4 +104,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(PRODUCT_ROOT, 'static')]
