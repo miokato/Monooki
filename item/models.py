@@ -4,7 +4,7 @@ from datetime import datetime
 
 class Item(models.Model):
     title = models.CharField(max_length=255)
-    url = models.URLField(max_length=255)
+    url = models.CharField(max_length=255)
     description = models.TextField()
 
     created_at = models.DateTimeField(default=datetime.now)
