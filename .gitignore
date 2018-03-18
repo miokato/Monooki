@@ -1,3 +1,4 @@
 .idea/
 __pycache__/
 settings_custom_example.py
+staticfiles/
