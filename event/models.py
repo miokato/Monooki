@@ -20,7 +20,7 @@ class Event(models.Model):
 class Ticket(models.Model):
     name = models.CharField('チケット名', max_length=255)
     event = models.ForeignKey('Event', on_delete=models.CASCADE, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ManyToManyField(User, blank=True)
     price = models.IntegerField('チケット価格')
     amount = models.IntegerField('チケット数量', default=1)
 
