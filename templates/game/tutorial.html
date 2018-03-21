@@ -1,0 +1,18 @@
+{% extends 'game/base.html' %}
+
+{% block title %}Unity WebGL Player | Tutorial Sample{% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}
