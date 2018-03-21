@@ -1,0 +1,23 @@
+{% extends 'event/base.html' %}
+
+{% block content %}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="card mx-auto" style="margin-top: 2em; margin-bottom: 2em;">
+        <div class="card-header">イベントを作成してください</div>
+        <div class="card-body">
+          <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">イベントを作成</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock content %}
