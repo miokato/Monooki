@@ -1,0 +1,7 @@
+{% load static %}
+
+<script src="{% static 'js/game/UnityProgress.js' %}"></script>
+<script src="{% static 'js/game/UnityLoader.js' %}"></script>
+<script>
+  var gameInstance = UnityLoader.instantiate("gameContainer", "{% static 'js/game/index.html.json' %}", {onProgress: UnityProgress});
+</script>
