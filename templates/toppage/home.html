@@ -40,7 +40,7 @@
         <ul class="list-group">
           {% for news in news_list %}
             <li class="list-group-item border-light">
-              <a href="{{ news.url }}"><span class="text-muted">{{ news.title }} : [ {{ news.created_at|date }} ]</span>
+              <a href="{{ news.url }}"><span class="text-muted">{{ news.title }} : [ {{ news.pub_date|date }} ]</span>
               </a>
             </li>
           {% endfor %}
