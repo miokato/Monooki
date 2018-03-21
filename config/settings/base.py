@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'item',
     'event',
+    'news',
 ]
 
 MIDDLEWARE = [

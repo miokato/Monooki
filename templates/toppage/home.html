@@ -7,7 +7,7 @@
 
 
     <!-- ヘッダー -->
-    <div class="card " style="margin-top: 2em">
+    <div class="card" style="margin-top: 2em">
       <div class="card-body">
         <h5 class="card-title">このページ</h5>
         <p class="card-text">
@@ -15,7 +15,6 @@
         </p>
       </div>
     </div>
-
 
     <!-- つくったものリスト -->
     <div class="row">
@@ -30,10 +29,26 @@
               <p class="card-text"><a href="{{ item.url }}">{{ item.url }}</a></p>
             </div>
           </div>
-
         </div>
       {% endfor %}
     </div>
+
+    <!-- ニュース -->
+    <div class="card" style="margin-top: 2em">
+      <div class="card-body">
+        <h5 class="card-title text-muted text-center">news</h5>
+        <ul class="list-group">
+          {% for news in news_list %}
+            <li class="list-group-item border-light">
+              <a href="{{ news.url }}"><span class="text-muted">{{ news.title }} : [ {{ news.created_at|date }} ]</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+
   </div>
 {% endblock content %}
 
