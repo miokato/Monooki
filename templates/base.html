@@ -11,7 +11,7 @@
 <body>
 
 
-{% block nav %}{% include 'navbar.html' %}{% endblock nav %}
+{% block nav %}{% include 'nav.html' %}{% endblock nav %}
 {% block content %}{% endblock content %}
 {% block footer %}{% include 'footer.html' %}{% endblock footer %}
 
@@ -19,6 +19,7 @@
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'bootstrap-4.0.0-dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'font-awesome/js/fontawesome-all.min.js' %}"></script>
 {% block custom-js %}{% endblock custom-js %}
 </body>
 </html>
