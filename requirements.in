@@ -5,3 +5,4 @@ whitenoise
 dj_database_url
 factory_boy
 coverage
+beautifulsoup4
