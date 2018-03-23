@@ -42,12 +42,10 @@
       {% for item in items %}
         <div class="col-lg-4 d-flex align-items-stretch">
           <div class="card mb-3" style="margin-top: 2em; max-width: 18rem">
-            <div class="card-header">
-              {{ item.title }}
-            </div>
+            <img src="{{ item.image_url }}" alt="" class="card-img-top">
             <div class="card-body">
+              <h5 class="card-title"><a href="{{ item.content_url }}">{{ item.title }}</a></h5>
               <p class="card-text">{{ item.description }}</p>
-              <p class="card-text"><a href="{{ item.url }}">{{ item.url }}</a></p>
             </div>
           </div>
         </div>
