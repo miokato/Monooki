@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 <!-- こちらのテンプレートはルートのbase.htmlを上書きしたいときに利用 -->
+{% block custom-css %}<link rel="stylesheet" href="{% static 'css/my.css' %}"/>{% endblock custom-css %}
 

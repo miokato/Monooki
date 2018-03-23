@@ -3,56 +3,37 @@
 {% block title %}Utomica{% endblock title %}
 
 {% block content %}
-  <div class="container">
 
-
-    <!-- ヘッダー -->
-    <div class="row">
-      <div class="col-lg-8 d-flex">
-        <div class="card border-light" style="margin-top: 2em">
-          <div class="card-body">
-            <h5 class="card-title text-muted">このページ</h5>
-            <p class="card-text text-muted">
-              創作活動をまとめておくページ。主につくったものを載せていく予定。
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 d-flex">
-        <div class="card border-light" style="margin-top: 2em">
-          <div class="card-body">
-            <h5 class="card-title text-muted">bio</h5>
-            <p class="card-text text-muted">
-              ものづくりと猫と旅が好き。ソフトウェア開発を中心に3Dモデリング、電子工作とかやってます。
-            </p>
-            <p class="card-text">
-              <a class="text-muted" href="https://twitter.com/_utomica"><i class="fab fa-twitter fa-lg"></i> _utomica</a>
-            </p>
-            <p class="card-text text-muted">
-              <a class="text-muted" href="https://github.com/miokato"><i class="fab fa-github fa-lg"></i> github</a>
-            </p>
-          </div>
-        </div>
-
-      </div>
+  <!-- ヘッダー -->
+  <section class="jumbotron">
+    <div class="container">
+      <p class="lead text-muted">
+        創作活動をまとめておくページ。主につくったものを載せていく予定。
+      </p>
     </div>
+  </section>
 
-    <!-- つくったものリスト -->
-    <div class="row">
-      {% for item in items %}
-        <div class="col-lg-4 d-flex align-items-stretch">
-          <div class="card mb-3" style="margin-top: 2em; max-width: 18rem">
-            <img src="{{ item.image_url }}" alt="" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title"><a href="{{ item.content_url }}">{{ item.title }}</a></h5>
-              <p class="card-text">{{ item.description }}</p>
+  <!-- つくったものリスト -->
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for item in items %}
+          <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+              <img src="{{ item.image_url }}" alt="" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title"><a href="{{ item.content_url }}">{{ item.title }}</a></h5>
+                <p class="card-text">{{ item.description }}</p>
+              </div>
             </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
+  </div>
 
-    <!-- ニュース -->
+  <!-- ニュース -->
+  <div class="container">
     <div class="card" style="margin-top: 2em">
       <div class="card-body">
         <h5 class="card-title text-muted text-center"><i class="far fa-newspaper fa-lg"></i> News</h5>
@@ -60,20 +41,20 @@
           {% for news in news_list %}
             <li class="list-group-item border-light">
               <a href="{{ news.url }}">
-                <span class="text-muted">
-                  <span class="text-info">
-                    {{ news.pub_date|date }} :
-                  </span>
-                  {{ news.title }}
+              <span class="text-muted">
+                <span class="text-info">
+                  {{ news.pub_date|date }} :
                 </span>
+                {{ news.title }}
+              </span>
               </a>
             </li>
           {% endfor %}
         </ul>
       </div>
     </div>
-
-
   </div>
+
+
 {% endblock content %}
 
