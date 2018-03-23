@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from item.models import Item
-from news.models import News
+from apps.item.models import Item
+from apps.news.models import News
 
 
 class ItemListView(ListView):

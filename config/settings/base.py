@@ -32,9 +32,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'item',
-    'event',
-    'news',
+    'apps.item',
+    'apps.event',
+    'apps.news',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +53,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PRODUCT_ROOT, 'templates')]
+        'DIRS': [os.path.join(PRODUCT_ROOT, 'apps/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,6 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(PRODUCT_ROOT, 'static')]
+STATICFILES_DIRS = [os.path.join(PRODUCT_ROOT, 'apps/static')]
 STATIC_ROOT = os.path.join(PRODUCT_ROOT, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

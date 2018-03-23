@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class UnityConfig(AppConfig):
-    name = 'unity'
+    name = 'apps.unity'
