@@ -55,11 +55,17 @@
     <!-- ニュース -->
     <div class="card" style="margin-top: 2em">
       <div class="card-body">
-        <h5 class="card-title text-muted text-center">news</h5>
+        <h5 class="card-title text-muted text-center"><i class="far fa-newspaper fa-lg"></i> News</h5>
         <ul class="list-group">
           {% for news in news_list %}
             <li class="list-group-item border-light">
-              <a href="{{ news.url }}"><span class="text-muted">{{ news.title }} : [ {{ news.pub_date|date }} ]</span>
+              <a href="{{ news.url }}">
+                <span class="text-muted">
+                  <span class="text-info">
+                    {{ news.pub_date|date }} :
+                  </span>
+                  {{ news.title }}
+                </span>
               </a>
             </li>
           {% endfor %}
