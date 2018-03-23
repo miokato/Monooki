@@ -2,6 +2,16 @@
 {% load static %}
 <html lang="en">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116319204-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-116319204-1');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>{% block title %}{% endblock title %}</title>
@@ -20,6 +30,8 @@
 <script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'bootstrap-4.0.0-dist/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'font-awesome/js/fontawesome-all.min.js' %}"></script>
+
+
 {% block custom-js %}{% endblock custom-js %}
 </body>
 </html>
