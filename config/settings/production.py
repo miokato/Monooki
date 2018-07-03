@@ -6,7 +6,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'utomica.co',
     'www.utomica.co',
-    'monooki.herokuapp.com',
+    'utomica.herokuapp.com',
     'localhost'
 ]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
