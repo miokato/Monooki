@@ -1,0 +1,22 @@
+{% extends 'items/base.html' %}
+
+{% block title %}作品紹介{% endblock title %}
+
+{% block content %}
+
+  <!-- Description -->
+  <div class="container" style="margin-top: 2em; max-width: 45em">
+    <div class="card border-light">
+      <img src="{{ item.image_url }}" alt="" class="card-img-top">
+      <div class="card-body">
+        <h4 class="card-title">{{ item.title }}</h4>
+        {% autoescape off %}
+        {{ item.description }}
+        {%  endautoescape %}
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock content %}

@@ -22,4 +22,5 @@ urlpatterns = [
     path('korat/', include('apps.korat.urls')),
     path('game/', include('apps.unity.urls')),
     path('event/', include('apps.event.urls')),
+    path('items/', include('apps.item.urls')),
 ]
