@@ -10,6 +10,7 @@ class Item(models.Model):
     description = models.TextField()
     slug = models.SlugField(max_length=80, blank=True)
 
+    published_at = models.DateField(default=datetime.now)
     created_at = models.DateTimeField(default=datetime.now)
     updated_at = models.DateTimeField(auto_now=True)
 
